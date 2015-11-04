@@ -121,7 +121,7 @@ function auto_iframe_shortcode( $atts ) {
 	$width = '100%';
 	if( array_key_exists( 'width', $atts ) ) { $width = htmlentities(trim( $atts['width'] ), ENT_QUOTES ); }
 	
-	$height = '100%';
+	$height = 'auto';
 	if( array_key_exists( 'height', $atts ) ) { $height = htmlentities(trim( $atts['height'] ), ENT_QUOTES ); }
 	
 	$autosize = true;
@@ -147,7 +147,7 @@ function auto_iframe_shortcode( $atts ) {
 		$result .= '// ]]></script>' . "\n";
 	}
 
-	$result .= '<iframe id="' . $tag . '" src="' . $link . '" width="' . $width . '" height="auto" frameborder="' . $border . '" scrolling="' . $scroll . '" onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"></iframe>';
+	$result .= '<iframe id="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '" onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"></iframe>';
 
 	return $result;
 }

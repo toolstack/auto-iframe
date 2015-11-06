@@ -1,11 +1,12 @@
 === Auto iFrame ===
 Contributors: GregRoss
+Donate link: http://toolstack.com/donate
 Plugin URI: http://toolstack.com/auto-iframe
 Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -51,6 +52,10 @@ None at this time.
 None at this time.
 
 == Changelog == 
+= 1.2 =
+* Release date: November 6, 2015
+* Fixed: Height parameter was being ignored, thanks vantron.
+
 = 1.1 =
 * Release date: August 11, 2015
 * Fixed: Make sure to check the frame element and sub-objects exist before using them later.

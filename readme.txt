@@ -52,6 +52,10 @@ None at this time.
 None at this time.
 
 == Changelog == 
+= 1.3 =
+* Release date: TBD
+* Fixed: Fudge factor being ignored when autosizing the iframe.
+
 = 1.2 =
 * Release date: November 6, 2015
 * Fixed: Height parameter was being ignored, thanks vantron.

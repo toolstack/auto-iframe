@@ -142,7 +142,7 @@ function auto_iframe_shortcode( $atts ) {
 	
 		$result = '<script type="text/javascript">// <![CDATA[' . "\n";
 		$result .= 'jQuery(document).ready(function(){' . "\n";
-		$result .= '	setInterval( function() { AutoiFrameAdjustiFrameHeight( \'' . $tag . '\', 200); }, 1000 );' . "\n";
+		$result .= '	setInterval( function() { AutoiFrameAdjustiFrameHeight( \'' . $tag . '\', ' . $fudge .'); }, 1000 );' . "\n";
 		$result .= '});' . "\n";
 		$result .= '// ]]></script>' . "\n";
 	}

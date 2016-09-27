@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -44,16 +44,19 @@ Now supports (Shortcode UI)[https://github.com/fusioneng/Shortcake] (aka Shortca
 1. Post with short code.
 
 == Frequently Asked Questions ==
-= None =
-None at this time.
+= The autosize function doesn't work, what's wrong? =
+
+The first thing to check is that the source of your content is in the same domain namespace as your site, using a link from another domain name will not work as it would be a cross site scripting risk.  This is part of your browsers security structure and cannot be worked around.
+
+After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.0 =
+= 1.3 =
 None at this time.
 
 == Changelog == 
 = 1.3 =
-* Release date: TBD
+* Release date: September 27, 2016
 * Fixed: Fudge factor being ignored when autosizing the iframe.
 
 = 1.2 =

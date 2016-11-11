@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -29,6 +29,7 @@ Where:
 * fudge = a fudge factor to apply when changing the height (integer number, no "px").  Default = 50.
 * border = enable the border on the iFrame.  Default = 0.
 * scroll = enable the scroll bar on the iFrame.  Default = no.
+* query = pass the parent's page query string to the iFrame.  Default = no.
 
 Note: Auto re-sizing of the iFrame for cross domain sites does not work, this is a security protection provided by the browser and there is no way around it.
 
@@ -55,6 +56,10 @@ After that, check your browsers console for any JavaScript errors that may be ha
 None at this time.
 
 == Changelog == 
+= 1.4 =
+* Release date: November 11, 2016
+* Added query support
+
 = 1.3 =
 * Release date: September 27, 2016
 * Fixed: Fudge factor being ignored when autosizing the iframe.

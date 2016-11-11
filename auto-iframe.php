@@ -38,6 +38,13 @@ function auto_iframe_init() {
 						'meta'  	  => array('size'=>'45'),
 					),
 					array(
+						'label'       => 'Add Query String',
+						'attr'        => 'query',
+						'type'        => 'radio',
+						'description' => 'Pass the parents query string in to the iFrame.',
+						'options'	  => array( 'yes' => 'Yes', 'no' => 'No'),
+					),
+					array(
 						'label'       => 'Tag',
 						'attr'        => 'tag',
 						'type'        => 'text',
@@ -102,6 +109,7 @@ function auto_iframe_shortcode( $atts ) {
 			fudge = a fudge factor to apply when changing the height (integer number, no "px").  Default = 50.
 			border = enable the border on the iFrame.  Default = 0.
 			scroll = enable the scroll bar on the iFrame.  Default = no.
+			query = pass the parent's page query string to the iFrame.  Default = no.
 	*/
 
 	// We don't have any parameters, just return a blank string.
@@ -135,6 +143,16 @@ function auto_iframe_shortcode( $atts ) {
 	
 	$scroll = 'no';
 	if( array_key_exists( 'scroll', $atts ) ) { if( strtolower( $atts['autosize'] ) != 'yes' ) { $scroll = 'yes'; } ; }
+	
+	if( array_key_exists( 'query', $atts ) ) { 
+		$qs_len = strlen( $_SERVER['QUERY_STRING'] );
+		
+		if( strstr( $link, '?' ) === FALSE && $qs_len > 0 ) {
+			$link = $link . '?' . $_SERVER['QUERY_STRING'];
+		} else if( $qs_len > 0 ) {
+			$link = $link . '&' . $_SERVER['QUERY_STRING'];
+		}
+	}
 	
 	if( $autosize ) {
 		// Enqueue the javascript and jquery code.

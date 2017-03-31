@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 4.7
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -52,13 +52,17 @@ The first thing to check is that the source of your content is in the same domai
 After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.3 =
+= 1.5 =
 None at this time.
 
 == Changelog == 
+= 1.5 =
+* Release date: March 31, 2017
+* Fixed: WP_DEBUG and JavaScript errors when the auto resize option was not used.
+
 = 1.4 =
 * Release date: November 11, 2016
-* Added query support
+* Added: Query support
 
 = 1.3 =
 * Release date: September 27, 2016

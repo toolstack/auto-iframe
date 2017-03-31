@@ -154,6 +154,9 @@ function auto_iframe_shortcode( $atts ) {
 		}
 	}
 	
+	$onload_autosize = '';
+	$result = '';
+	
 	if( $autosize ) {
 		// Enqueue the javascript and jquery code.
 		wp_enqueue_script( 'auto_iframe_js', plugins_url( 'auto-iframe.js', __FILE__ ), array( 'jquery' ) );
@@ -163,9 +166,11 @@ function auto_iframe_shortcode( $atts ) {
 		$result .= '	setInterval( function() { AutoiFrameAdjustiFrameHeight( \'' . $tag . '\', ' . $fudge .'); }, 1000 );' . "\n";
 		$result .= '});' . "\n";
 		$result .= '// ]]></script>' . "\n";
+		
+		$onload_autosize = 'onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"';
 	}
 
-	$result .= '<iframe id="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '" onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"></iframe>';
+	$result .= '<iframe id="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '"' . $onload_autosize . '></iframe>';
 
 	return $result;
 }

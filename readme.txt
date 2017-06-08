@@ -5,7 +5,7 @@ Plugin URI: http://toolstack.com/auto-iframe
 Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
-Tested up to: 4.7
+Tested up to: 4.8
 Stable tag: 1.5
 License: GPL2
 

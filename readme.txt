@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -18,7 +18,7 @@ A quick and easy shortcode to embed iframe's that resize to the content of the r
 Auto iFrame shortcode is in the format of:
 
 	[auto-iframe link=xxx tag=xxx width=xxx height=xxx autosize=yes/no]
-	
+
 Where:
 
 * link = the url of the source for the iFrame.  REQUIRED.
@@ -52,10 +52,14 @@ The first thing to check is that the source of your content is in the same domai
 After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.5 =
+= 1.6 =
 None at this time.
 
-== Changelog == 
+== Changelog ==
+= 1.6 =
+* Release date: February 21, 2018
+* Added: name attribute to the iframe.
+
 = 1.5 =
 * Release date: March 31, 2017
 * Fixed: WP_DEBUG and JavaScript errors when the auto resize option was not used.

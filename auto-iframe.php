@@ -13,8 +13,8 @@ add_action( 'init', 'auto_iframe_init' );
 
 function auto_iframe_init() {
 	add_shortcode( 'auto-iframe', 'auto_iframe_shortcode' );
-	
-	// ShortCake support if loaded.		
+
+	// ShortCake support if loaded.
 	if( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
 		shortcode_ui_register_for_shortcode(
 			'auto-iframe',
@@ -90,16 +90,16 @@ function auto_iframe_init() {
 			)
 		);
 	}
-	
+
 }
 
 
 function auto_iframe_shortcode( $atts ) {
 	/*
 		Auto iFrame shortcode is in the format of:
-		
+
 			[auto-iframe link=xxx tag=xxx width=xxx height=xxx autosize=yes/no]
-			
+
 		Where:
 			link = the url of the source for the iFrame.  REQUIRED.
 			tag = a unique identifier in case you want more than one iFrame on a page.  Default = auto-iframe.
@@ -114,63 +114,63 @@ function auto_iframe_shortcode( $atts ) {
 
 	// We don't have any parameters, just return a blank string.
 	if( !is_array( $atts ) ) { return ''; }
-	
+
 	// Get the link.
 	$link = '';
 	if( array_key_exists( 'link', $atts ) ) { $link = htmlentities(trim( $atts['link'] ), ENT_QUOTES ); }
-	
+
 	// If no link has been passed in, there's nothing to do so just return a blank string.
 	if( $link == '' ) { return ''; }
-	
+
 	// Get the rest of the attributes.
 	$tag = 'auto-iframe';
 	if( array_key_exists( 'tag', $atts ) ) { $tag = htmlentities(trim( $atts['tag'] ), ENT_QUOTES ); }
-	
+
 	$width = '100%';
 	if( array_key_exists( 'width', $atts ) ) { $width = htmlentities(trim( $atts['width'] ), ENT_QUOTES ); }
-	
+
 	$height = 'auto';
 	if( array_key_exists( 'height', $atts ) ) { $height = htmlentities(trim( $atts['height'] ), ENT_QUOTES ); }
-	
+
 	$autosize = true;
 	if( array_key_exists( 'autosize', $atts ) ) { if( strtolower( $atts['autosize'] ) != 'yes' ) { $autosize = false; } ; }
-	
+
 	$fudge = 50;
 	if( array_key_exists( 'fudge', $atts ) ) { $fudge = intval( $atts['fudge'] ); }
-	
+
 	$border = '0';
 	if( array_key_exists( 'border', $atts ) ) { $border = htmlentities(trim( $atts['border'] ), ENT_QUOTES ); }
-	
+
 	$scroll = 'no';
 	if( array_key_exists( 'scroll', $atts ) ) { if( strtolower( $atts['autosize'] ) != 'yes' ) { $scroll = 'yes'; } ; }
-	
-	if( array_key_exists( 'query', $atts ) ) { 
+
+	if( array_key_exists( 'query', $atts ) ) {
 		$qs_len = strlen( $_SERVER['QUERY_STRING'] );
-		
+
 		if( strstr( $link, '?' ) === FALSE && $qs_len > 0 ) {
 			$link = $link . '?' . $_SERVER['QUERY_STRING'];
 		} else if( $qs_len > 0 ) {
 			$link = $link . '&' . $_SERVER['QUERY_STRING'];
 		}
 	}
-	
+
 	$onload_autosize = '';
 	$result = '';
-	
+
 	if( $autosize ) {
 		// Enqueue the javascript and jquery code.
 		wp_enqueue_script( 'auto_iframe_js', plugins_url( 'auto-iframe.js', __FILE__ ), array( 'jquery' ) );
-	
+
 		$result = '<script type="text/javascript">// <![CDATA[' . "\n";
 		$result .= 'jQuery(document).ready(function(){' . "\n";
 		$result .= '	setInterval( function() { AutoiFrameAdjustiFrameHeight( \'' . $tag . '\', ' . $fudge .'); }, 1000 );' . "\n";
 		$result .= '});' . "\n";
 		$result .= '// ]]></script>' . "\n";
-		
+
 		$onload_autosize = 'onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"';
 	}
 
-	$result .= '<iframe id="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '"' . $onload_autosize . '></iframe>';
+	$result .= '<iframe id="' . $tag . '" name="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '"' . $onload_autosize . '></iframe>';
 
 	return $result;
 }

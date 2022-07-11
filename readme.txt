@@ -5,8 +5,8 @@ Plugin URI: http://toolstack.com/auto-iframe
 Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
-Tested up to: 5.4
-Stable tag: 1.6
+Tested up to: 6.0
+Stable tag: 1.7
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -52,10 +52,14 @@ The first thing to check is that the source of your content is in the same domai
 After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.6 =
+= 1.7 =
 None at this time.
 
 == Changelog ==
+= 1.7 =
+* Release date: July 10, 2022
+* Fixed: unset array key warning for php 8 when scroll is set but autosize hasn't been.
+
 = 1.6 =
 * Release date: February 21, 2018
 * Added: name attribute to the iframe.

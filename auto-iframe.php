@@ -142,7 +142,7 @@ function auto_iframe_shortcode( $atts ) {
 	if( array_key_exists( 'border', $atts ) ) { $border = htmlentities(trim( $atts['border'] ), ENT_QUOTES ); }
 
 	$scroll = 'no';
-	if( array_key_exists( 'scroll', $atts ) ) { if( strtolower( $atts['autosize'] ) != 'yes' ) { $scroll = 'yes'; } ; }
+	if( array_key_exists( 'scroll', $atts ) ) { if( array_key_exists( 'autosize', $atts ) && strtolower( $atts['autosize'] ) != 'yes' ) { $scroll = 'yes'; } ; }
 
 	if( array_key_exists( 'query', $atts ) ) {
 		$qs_len = strlen( $_SERVER['QUERY_STRING'] );

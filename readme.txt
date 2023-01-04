@@ -91,4 +91,3 @@ None at this time.
 = 0.5 =
 * Release date: March 25, 2015
 * Initial release.
-

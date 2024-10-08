@@ -5,7 +5,7 @@
 **Author URI:** http://toolstack.com  
 **Tags:** Resize, iFrame  
 **Requires at least:** 3.0  
-**Tested up to:** 6.1.1  
+**Tested up to:** 6.6  
 **Stable tag:** 1.7  
 **License:** GPL2  
 
@@ -93,3 +93,4 @@ None at this time.
 ### 0.5 ###
 * Release date: March 25, 2015
 * Initial release.
+

@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 6.6
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -52,10 +52,14 @@ The first thing to check is that the source of your content is in the same domai
 After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.7 =
+= 1.8 =
 None at this time.
 
 == Changelog ==
+= 1.8 =
+* Release date: October 7, 2024
+* Fixed: Escape tag attribute to avoid javascript injection.
+
 = 1.7 =
 * Release date: July 10, 2022
 * Fixed: unset array key warning for php 8 when scroll is set but autosize hasn't been.
@@ -91,4 +95,3 @@ None at this time.
 = 0.5 =
 * Release date: March 25, 2015
 * Initial release.
-

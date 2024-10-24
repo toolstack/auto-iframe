@@ -119,6 +119,9 @@ function auto_iframe_shortcode( $atts ) {
 	$link = '';
 	if( array_key_exists( 'link', $atts ) ) { $link = htmlentities( trim( $atts['link'] ), ENT_QUOTES ); }
 
+	// Check to see if this is a javascript link, if so, don't process it.
+	if( preg_match('/^javascript:/i', $link ) ) { return ''; }
+
 	// If no link has been passed in, there's nothing to do so just return a blank string.
 	if( $link == '' ) { return ''; }
 

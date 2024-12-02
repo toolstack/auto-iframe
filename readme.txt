@@ -6,7 +6,7 @@ Author URI: http://toolstack.com
 Tags: Resize, iFrame
 Requires at least: 3.0
 Tested up to: 6.6
-Stable tag: 1.9
+Stable tag: 2.0
 License: GPL2
 
 A quick and easy shortcode to embed iframe's that resize to the content of the remote site.
@@ -52,10 +52,13 @@ The first thing to check is that the source of your content is in the same domai
 After that, check your browsers console for any JavaScript errors that may be happening, there may be conflicting JavaScript on the page causing an error.
 
 == Upgrade Notice ==
-= 1.9 =
 None at this time.
 
 == Changelog ==
+= 2.0 =
+* Release date: December 2, 2024
+* Fixed: Escape all link parameters.
+
 = 1.9 =
 * Release date: October 23, 2024
 * Fixed: Don't allow links that are javascript code.

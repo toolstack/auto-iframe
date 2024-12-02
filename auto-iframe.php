@@ -173,7 +173,7 @@ function auto_iframe_shortcode( $atts ) {
 		$onload_autosize = 'onload="AutoiFrameAdjustiFrameHeight(\'' . $tag . '\',' . $fudge . ');"';
 	}
 
-	$result .= '<iframe id="' . $tag . '" name="' . $tag . '" src="' . $link . '" width="' . $width . '" height="' . $height . '" frameborder="' . $border . '" scrolling="' . $scroll . '"' . $onload_autosize . '></iframe>';
+	$result .= '<iframe id="' . esc_attr($tag) . '" name="' . esc_attr($tag) . '" src="' . esc_url($link) . '" width="' . esc_attr($width) . '" height="' . esc_attr($height) . '" frameborder="' . esc_attr($border) . '" scrolling="' . esc_attr($scroll) . '"' . $onload_autosize . '></iframe>';
 
 	return $result;
 }
